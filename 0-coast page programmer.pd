@@ -1,0 +1,133 @@
+#N canvas 297 108 769 972 10;
+#X obj 98 120 ctlout 65 1;
+#X obj 311 117 ctlout 5 1;
+#X floatatom 311 81 5 0 127 2 Portamento_time portamento_time -, f
+5;
+#X obj 98 278 ctlout 117 1;
+#X obj 218 278 ctlout 119 1;
+#X floatatom 98 360 5 0 16 2 MIDI_A_Channel a_channel -, f 5;
+#X obj 98 399 ctlout 102 1;
+#X floatatom 309 356 5 0 16 2 MIDI_B_Channel b_channel -, f 5;
+#X obj 309 395 ctlout 103 1;
+#X obj 98 81 vradio 15 1 0 2 empty portamento Portamento 0 -8 0 10
+-262144 -1 -1 0;
+#X text 117 81 OFF;
+#X text 117 96 ON;
+#X obj 98 240 vradio 15 1 0 2 empty arp Arp 0 -8 0 10 -262144 -1 -1
+0;
+#X text 117 240 OFF;
+#X text 117 255 ON;
+#X obj 218 240 vradio 15 1 0 2 empty arp_type ArpType 0 -8 0 10 -262144
+-1 -1 0;
+#X text 237 240 traditional;
+#X text 237 255 latch & shift;
+#X obj 351 279 ctlout 118 1;
+#X obj 351 241 vradio 15 1 0 2 empty legato Legato 0 -8 0 10 -262144
+-1 -1 1;
+#X text 370 241 OFF;
+#X text 370 256 ON;
+#X obj 98 379 i;
+#X obj 309 375 i;
+#X obj 97 446 vradio 15 1 0 4 empty a_cv MIDI_A_CV 0 -8 0 10 -262144
+-1 -1 0;
+#X text 117 445 Note;
+#X text 117 460 Velocity;
+#X text 116 491 LFO;
+#X obj 97 511 ctlout 104 1;
+#X obj 309 446 vradio 15 1 0 4 empty b_cv MIDI_B_CV 0 -8 0 10 -262144
+-1 -1 0;
+#X text 329 445 Note;
+#X text 329 460 Velocity;
+#X text 328 491 LFO;
+#X obj 309 511 ctlout 105 1;
+#X obj 97 566 vradio 15 1 0 4 empty a_gate MIDI_A_Gate 0 -8 0 10 -262144
+-1 -1 0;
+#X text 116 611 LFO;
+#X text 117 565 Note ON;
+#X text 117 580 Velocity > 64;
+#X text 117 595 Mod Wheel > 64 (CC1);
+#X obj 97 631 ctlout 105 1;
+#X obj 307 566 vradio 15 1 0 4 empty b_gate MIDI_B_Gate 0 -8 0 10 -262144
+-1 -1 0;
+#X text 326 611 LFO;
+#X text 327 565 Note ON;
+#X text 327 580 Velocity > 64;
+#X text 327 595 Mod Wheel > 64 (CC1);
+#X obj 307 631 ctlout 106 1;
+#X floatatom 97 686 5 0 127 2 MIDI_A_Pitchbend_scale a_pitchbend -
+, f 5;
+#X floatatom 307 686 5 0 127 2 MIDI_B_Pitchbend_scale b_pitchbend -
+, f 5;
+#X obj 307 725 ctlout 109 1;
+#X obj 97 725 ctlout 108 1;
+#X floatatom 97 776 5 0 127 2 MIDI_A_Aftertouch_scale a_aftertouch
+-, f 5;
+#X floatatom 307 776 5 0 127 2 MIDI_B_Aftertouch_scale b_aftertouch
+-, f 5;
+#X obj 97 815 ctlout 110 1;
+#X floatatom 97 866 5 0 127 2 MIDI_A_Minimum_velocity a_vel -, f 5
+;
+#X floatatom 307 866 5 0 127 2 MIDI_B_Minimum_velocity b_vel -, f
+5;
+#X obj 307 815 ctlout 111 1;
+#X obj 97 905 ctlout 112 1;
+#X obj 307 905 ctlout 113 1;
+#X obj 461 241 vradio 15 1 0 2 empty midi_clock Receive_MIDI_CLocK
+0 -8 0 10 -262144 -1 -1 0;
+#X text 480 241 OFF;
+#X text 480 256 ON;
+#X obj 461 279 ctlout 114 1;
+#X floatatom 609 242 5 1 127 2 Tempo_in_division tempo_div -, f 5
+;
+#X obj 609 261 i;
+#X obj 609 281 ctlout 116 1;
+#X obj 97 704 i;
+#X obj 307 704 i;
+#X obj 97 794 i;
+#X obj 307 794 i;
+#X obj 97 884 i;
+#X obj 307 884 i;
+#X text 329 475 Mod Wheel (CC1);
+#X text 117 475 Mod Wheel (CC1);
+#X text 49 178 Hold PGM A to enter PGM pages and modify the following
+settings, f 89;
+#X obj 311 97 i;
+#X msg 563 365 \; portamento 0 \; portamento_time 0 \; arp 0 \; arp_type
+0 \; legato 1 \; midi_clock 0 \; tempo_div 1 \; a_channel 0 \; a_cv
+0 \; a_gate 0 \; a_pitchbend 0 \; a_aftertouch 0 \; a_vel 0 \; b_channel
+0 \; b_cv 0 \; b_gate 0 \; b_pitchbend 0 \; b_aftertouch 0 \; b_vel
+0;
+#X obj 563 342 bng 15 250 50 0 empty empty preset_example 17 7 0 10
+-262144 -1 -1;
+#X text 50 16 Page programmer for MakeNoise 0-coast - Baptiste Chatel
+2017;
+#X connect 2 0 74 0;
+#X connect 5 0 22 0;
+#X connect 7 0 23 0;
+#X connect 9 0 0 0;
+#X connect 12 0 3 0;
+#X connect 15 0 4 0;
+#X connect 19 0 18 0;
+#X connect 22 0 6 0;
+#X connect 23 0 8 0;
+#X connect 24 0 28 0;
+#X connect 29 0 33 0;
+#X connect 34 0 39 0;
+#X connect 40 0 45 0;
+#X connect 46 0 65 0;
+#X connect 47 0 66 0;
+#X connect 50 0 67 0;
+#X connect 51 0 68 0;
+#X connect 53 0 69 0;
+#X connect 54 0 70 0;
+#X connect 58 0 61 0;
+#X connect 62 0 63 0;
+#X connect 63 0 64 0;
+#X connect 65 0 49 0;
+#X connect 66 0 48 0;
+#X connect 67 0 52 0;
+#X connect 68 0 55 0;
+#X connect 69 0 56 0;
+#X connect 70 0 57 0;
+#X connect 74 0 1 0;
+#X connect 76 0 75 0;
