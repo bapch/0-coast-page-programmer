@@ -2,12 +2,13 @@
 Pd cousin of MakeNoise Max4Live page programmer
 
 ## Features
-- it's working as intended
-- it has receives some it's kinda remote-controllable
+It has the exact same features as the M4L page programmer, minus the need to have Max and Live.
+
+## Changelog for v2
+- selectable midi channel
+- $0-ified
+- a bit prettier
+- 10 presets slots
 
 ## TODO ?
-- make it possible to change the channel it's using (using ch 1 for now)
-- $0
-- presets
-- eye-candy (add knobs and hide clutter)
-- VST/LV2/Faust
+- [ ] VST/LV2/Faust
